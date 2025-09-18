@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page - Proyecto Técnico Integrador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 0; padding: 0; }
+        header { background: #2d3e50; color: #fff; padding: 20px 0; text-align: center; }
+        section { background: #fff; margin: 30px auto; padding: 20px; border-radius: 8px; max-width: 900px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+        h1, h2, h3 { color: #2d3e50; }
+        ul { margin-left: 20px; }
+        .diagram { margin: 20px 0; text-align: center; }
+        .module { display: inline-block; background: #e3eaf2; padding: 10px 18px; border-radius: 6px; margin: 5px; }
+        .entity-list { columns: 2; }
+        footer { text-align: center; color: #888; margin: 40px 0 10px 0; }
+        .note { background: #fffbe6; border-left: 4px solid #ffd700; padding: 10px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Proyecto Técnico Integrador: Ecommerce de Libros</h1>
+        <p>Backend funcional en Java Spring Boot & MySQL</p>
+    </header>
+
+    <section>
+        <h2>1. Descripción del Proyecto</h2>
+        <p>
+            Este proyecto académico consiste en el desarrollo de un sistema ecommerce para la venta de libros, con funcionalidades básicas de CRUD y gestión de usuarios, catálogo y pedidos. El backend está construido en Java con Spring Boot y utiliza MySQL como base de datos.
+        </p>
+        <div>
+            <span class="module">User Module</span>
+            <span class="module">Catalog Module</span>
+            <span class="module">Order Module</span>
+            <span class="module">Common Module</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Entidades Principales</h2>
+        <div class="entity-list">
+            <ul>
+                <li><b>User</b>: userID, nombre, email, password, enabled, createdAt</li>
+                <li><b>Role</b>: roleID, nombre</li>
+                <li><b>Address</b>: addressID, calle, ciudad, pais, codigoPostal, userID</li>
+                <li><b>Category</b>: categoryID, nombre, descripcion</li>
+                <li><b>Book</b>: bookID, titulo, autor, precio, stock, categoryID</li>
+                <li><b>Review</b>: reviewID, contenido, rating, userID, bookID</li>
+                <li><b>Cart</b>: cartID, userID, createdAt</li>
+                <li><b>CartItem</b>: cartItemID, cantidad, bookID, cartID</li>
+                <li><b>Order</b>: orderID, fecha, total, estado, userID</li>
+                <li><b>OrderItem</b>: orderItemID, cantidad, precioUnitario, bookID, orderID</li>
+            </ul>
+        </div>
+        <div class="diagram">
+            <h3>Modelo Entidad-Relación (MER)</h3>
+            <img src="database/MER.png" alt="Modelo Entidad-Relación" width="400">
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Diagramas UML</h2>
+        <div class="diagram">
+            <h3>Diagrama de Casos de Uso</h3>
+            <img src="architecture/use_case/User_Management.png" alt="Diagrama de Casos de Uso" width="400">
+            <img src="architecture/use_case/Book_Catalog.png" alt="Diagrama de Casos de Uso" width="400">
+            <img src="architecture/use_case/Cart_&_Orders.png" alt="Diagrama de Casos de Uso" width="400">
+        </div>
+        <div class="diagram">
+            <h3>Diagrama de Clases</h3>
+            <img src="architecture/class/Class_Diagram.png" alt="Diagrama de Clases" width="400">
+        </div>
+        <div class="diagram">
+            <h3>Diagrama de Secuencia</h3>
+            <img src="architecture/secuence/User_Registration.png" alt="Diagrama de Secuencia" width="400">
+            <img src="architecture/secuence/View_Book_and_Write_Review.png" alt="Diagrama de Secuencia" width="400">
+            <img src="architecture/secuence/Add_Book_to_Cart_and_Place_Order.png" alt="Diagrama de Secuencia" width="400">
+        </div>
+        <div class="diagram">
+            <h3>Diagrama de Paquetes</h3>
+            <img src="architecture/package/Package_Diagram.png" alt="Diagrama de Paquetes" width="400">
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Arquitectura y Backend</h2>
+        <ul>
+            <li>Backend funcional con Java Spring Boot y MySQL.</li>
+            <li>Organización en módulos: <b>User</b>, <b>Catalog</b>, <b>Order</b>, <b>Common</b>.</li>
+            <li>CRUD básico para todas las entidades principales.</li>
+            <li>Aplicación de buenas prácticas y Clean Code.</li>
+            <li>Preparado para futura orientación a microservicios.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>5. Gestión en Git y Historias de Usuario</h2>
+        <ul>
+            <li>HU de Documentación</li>
+            <li>HU de Backend</li>
+            <li>Flujo: <b>Develop</b> → <b>QA</b> → <b>Release</b> → <b>Main</b></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Proyecto académico desarrollado por Cristofer Lozano &copy; 2025</p>
+    </footer>
+</body>
+</html>
